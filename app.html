@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/textarea.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -30,6 +31,21 @@
     <div class="initial-view animate__animated animate__fadeInLeftBig">
         <h1 class="heading">Great Writing, Simplified</h1> <!-- this is the grammarly heading temp here-->
     </div>
+
+    <!-- Text Area -->
+    <div class="center">
+        <div class="wrapper initial-view-textarea animate__animated animate__fadeInRightBig">
+            <textarea spellcheck="false" placeholder="Type something here..." required></textarea>
+        </div>
+    </div>
+    <script>
+        const textarea = document.querySelector("textarea");
+        textarea.addEventListener("keyup", e => {
+            textarea.style.height = "63px";
+            let scHeight = e.target.scrollHeight;
+            textarea.style.height = `${scHeight}px`;
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="copyright">© 2020
