@@ -1,3 +1,4 @@
+// Browser Detector
 window.addEventListener("load", function () {
   const result = bowser.getParser(navigator.userAgent).getResult();
   if (result.browser.name === 'Safari' || result.browser.name === 'Internet Explorer') {
@@ -20,3 +21,5 @@ function isBrave() {
     return false;
   }
 }
+
+
