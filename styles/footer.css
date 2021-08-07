@@ -1,23 +1,26 @@
 footer {
 	width: 100%;
-	height: 100%;
+	height: 60px;
     background-color: var(--lavendar);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
 }
 
 .copyright {
 	color: var(--richblack);
-	font-size: 14px;
-	line-height: 60px;
+	/* line-height: 60px; */
 	text-align: center;
 }
 
-.copyright a{
+.copyright p a{
 	color: var(--richblack);
-	font-size: 1rem;
-	letter-spacing: 1px;
+	font-weight: var(--h2);
     text-decoration: none;
+	transition: 0.2s ease;
 }
 
-.copyright a:hover{
+.copyright p a:hover{
 	color: var(--charcoal);
 }

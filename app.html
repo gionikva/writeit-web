@@ -13,9 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -32,45 +30,28 @@
         <!-- left and right container  -->
         <div class="initial-view">
             <!-- left side  -->
-            <div class="initial-view-left">
-                <h1 class="heading animate__animated animate__fadeInDownBig">Writing Tool, For All</h1>
-                <!-- slogan -->
-                <h3 class="animate__animated animate__fadeInLeftBig">Correct those mistakes and WriteIt with
-                    confidence using
-                    our AI writing assistant.</h3>
-                <button id="demo" class="animate__animated animate__fadeInUpBig"></button>
+            <div class="initial-view-left initial-view-left-app-html">
+                <h1 class="heading animate__animated animate__fadeInLeftBig">Writing Tool, For All</h1>
+                    <!-- slogan -->
+                <h3 class="animate__animated animate__fadeInLeftBig">Correct those mistakes and WriteIt with confidence using our AI writing assistant.</h3>
+                
+                
             </div>
             <!-- right side  -->
-            <div class="initial-view-right">
-                <div class="animate__animated animate__fadeIn phone"></div>
+            <div class="initial-view-right initial-view-right-app-html">
+                <!-- Text Area -->
+                <div class="textarea-container">
+                    <div class="wrapper animate__animated animate__fadeInRightBig">
+                        <textarea spellcheck="false" placeholder="Type something here..." required></textarea>
+                    </div>
+                    <div class="initial-view-center">
+                        <button class="animate__animated animate__fadeInRightBig">Polish!</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-    <div class="initial-view animate__animated animate__fadeInLeftBig">
-        <h1 class="heading">Writing Tool, For All</h1> <!-- this is the grammarly heading temp here-->
-    </div>
-
-    <!-- Text Area -->
-    <div class="center">
-        <div class="wrapper initial-view-textarea animate__animated animate__fadeInRightBig">
-            <textarea spellcheck="false" placeholder="Type something here..." required></textarea>
-        </div>
-        <div class="initial-view-center">
-            <button class="animate__animated animate__fadeInRightBig">Polish!</button>
-        </div>
-    </div>
     <script>
         const textarea = document.querySelector("textarea");
         textarea.addEventListener("keyup", e => {
@@ -81,8 +62,10 @@
     </script>
 
     <!-- Footer -->
-    <footer class="copyright">© 2020
-        <a href="https://github.com/gionikva/writeit-web" target="_blank">WriteIt</a>
+    <footer class="copyright">
+        <p>
+            &copy 2020 <a href="https://github.com/gionikva/writeit-web" target="_blank">WriteIt</a>
+        </p>
     </footer>
 </body>
 
