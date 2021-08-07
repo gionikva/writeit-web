@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--lavendar); /* placeholder to make visible */
+    color: var(--richblack);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--richblack);
+    vertical-align: center;
+    font-size: 1.125rem;
+    padding: 5px;
+}
+
+.navbar .logo {
+    height: 35px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar .logo img {
+    width: 35px;
+    border-radius: 5px;
+}
+
+.navbar .logo h2 {
+    font-weight: var(--h2);
+    margin: 0 auto;
+}
