@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <script defer src="{{url_for('static', filename='app.js')}}"></script>
     <!-- Navigation  -->
     <div class="navbar">
         <div class="logo">
@@ -42,9 +43,9 @@
                 <!-- Text Area -->
                 <div class="textarea-container">
                     <div class="wrapper animate__animated animate__fadeInRightBig">
-                        <textarea spellcheck="false" placeholder="Type something here..." required></textarea>
+                        <textarea spellcheck="true" placeholder="Type something here..." required></textarea>
                     </div>
-                    <div class="initial-view-center">
+                    <div class="initial-view-center" id="polish-button">
                         <button class="animate__animated animate__fadeInRightBig">Polish!</button>
                     </div>
                 </div>
