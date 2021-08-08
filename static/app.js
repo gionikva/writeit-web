@@ -1,3 +1,5 @@
+var interval;
+
 document.getElementById('polish-button').addEventListener('mouseup', async () => {
     const textarea = document.getElementsByTagName('textarea').item(0);
     var text = textarea.value;
@@ -19,6 +21,8 @@ document.getElementById('polish-button').addEventListener('mouseup', async () =>
     }
     textarea.value = text;
 })
+
+
 
 window.addEventListener("load", () => {
     console.log("WORKING");
@@ -53,11 +57,40 @@ window.addEventListener("load", () => {
     var isIE = !!ua.match(/msie|trident\/7|edge/);
     var isWinPhone = ua.indexOf('windows phone') !== -1;
     var isIOS = !isWinPhone && !!ua.match(/ipad|iphone|ipod/);
+    var suggestions = [];
+    interval = setInterval(() => pollHighlights(), 1000);
 
-    function applyHighlights(text) {
-        text = text
-            .replace(/\n$/g, '\n\n')
-            .replace(/[A-Z].*?\b/g, '<span class="highlight">$&</span>');
+    async function pollHighlights()  {
+        var text = $textarea.val();
+        if (text) {
+            const resp = await fetch('/check/' + text);
+            console.log("Resp", resp);
+            const json = await resp.json();
+            console.log("Json", json);
+            var highlightedText = applyHighlights(text,  Array.from(Object.values(json.corrected_words)));
+            $highlights.html(highlightedText);
+        } else {
+            var highlightedText = applyHighlights(text, []);
+        }
+        // applyHighlights();
+    }
+
+    function applyHighlights(text_, suggestions) {
+
+        if (suggestions.length == 0) { return '' };
+        var text = `${text_}`;
+        var offset = 0;
+        for (const suggestion of suggestions) {
+            var diff = '<div class="highlight"></div>'.length;
+            var bef = text.slice(0, suggestion.index[0] + offset);
+            var aft = text.slice(suggestion.index[1] + offset);
+            text = bef + `<div class="highlight">${suggestion.initial}</div>` + aft;
+            offset += diff;
+        }
+        
+        // text = text
+        //     .replace(/\n$/g, '\n\n')
+        //     .replace(/[A-Z].*?\b/g, '<div class="highlight">$&</div>');
 
         if (isIE) {
             text = text.replace(/ /g, ' <wbr>');
@@ -66,16 +99,21 @@ window.addEventListener("load", () => {
         return text;
     }
 
+
     function handleInput() {
         var text = $textarea.val();
-        var highlightedText = applyHighlights(text);
-        $highlights.html(highlightedText);
+        // var highlightedText = applyHighlights(text);
+        // $highlights.html(highlightedText);
     }
 
     function handleScroll() {
-        console.log
+        console.log("Handling scroll");
+        console.log($backdrop.scrollTop);
         var scrollTop = $textarea.scrollTop();
-        $backdrop.scrollTop(scrollTop);
+        // $backdrop.scrollTop(scrollTop);
+        console.log(scrollTop);
+        highlights.style.top = -scrollTop +10 + "px";
+        // console.log(scrollTop);
 
         var scrollLeft = $textarea.scrollLeft();
         $backdrop.scrollLeft(scrollLeft);
