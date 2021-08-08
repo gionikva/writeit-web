@@ -20,8 +20,8 @@ textarea {
 
 .wrapper{
   width: 100%;
-  max-height: 330px;
-  min-height: 40vh;
+  max-height: 280px;
+  min-height: 41vh;
   background: var(--lavendar);
   border-radius: 5px;
   padding: 25px 25px 30px;
@@ -34,7 +34,7 @@ textarea {
   outline: none;
   padding: 15px;
   font-size: 16px;
-  max-height: 300px;
+  max-height: 280px;
   border-radius: 5px;
   caret-color: var(--richblack);
   border: 2px solid var(--lavendar);
