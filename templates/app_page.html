@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriteIt: Launch</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.es6.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/navbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/footer.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/textarea.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script defer src="{{url_for('static', filename='app.js')}}"></script>
+    <!-- Navigation  -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{url_for('static', filename='assets/LogoNoText.svg')}}" alt="Logo of WriteIt">
+            <h2>WriteIt</h2>
+        </div>
+        <a href="{{url_for('home')}}">Home</a>
+    </div>
+    <!-- First thing people see  -->
+    <div class="initial-container">
+        <!-- left and right container  -->
+        <div class="initial-view">
+            <!-- left side  -->
+            <div class="initial-view-left initial-view-left-app-html">
+                <h1 class="heading animate__animated animate__fadeInLeftBig">Writing Tool, For All</h1>
+                    <!-- slogan -->
+                <h3 class="animate__animated animate__fadeInLeftBig">Correct those mistakes and WriteIt with confidence using our AI writing assistant.</h3>
+                
+                
+            </div>
+            <!-- right side  -->
+            <div class="initial-view-right initial-view-right-app-html">
+                <!-- Text Area -->
+                <div class="textarea-container">
+                    <div class="wrapper animate__animated animate__fadeInRightBig">
+                        <!-- <div class="writeit-highlight-wrapper">  -->
+                        <textarea spellcheck="false" placeholder="Type something here..." required></textarea>
+                    </div>
+                    <div class="initial-view-center" id="polish-button">
+                        <button class="animate__animated animate__fadeInRightBig">Polish!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- suggestions section  -->
+        <div class="initial-view-bottom-center-container">
+            <div class="initial-view-bottom-center">
+                <h2>Suggestions</h2>
+
+                <div class="buttons-container">
+                    <!-- single button  -->
+                    <button>
+                        <!-- format: "${errorType}: ${incorrectWord}"" -->
+                        <h4>Spelling: intereting</h4>
+                        <!-- error description  -->
+                        <details>
+                            <summary>Details</summary>
+                            <p>intereting should be interesting here.</p>
+                        </details>
+                        <!-- suggestions  -->
+                        <details>
+                            <summary>Suggestions</summary>
+                            Word should be Word1 here.
+                            <!-- if spelling error ${word} should be ${suggestion1} here. -->
+                        </details>
+                    </button>
+    
+                    <button>
+                        <!-- for grammar mistakes make it scroll up and highlight the line with error  -->
+                        <h4>Grammar: Highlight error</h4>
+                        <!-- suggestions  -->
+                        <details>
+                            <summary>Suggestions</summary>
+                            Word should be Word1 here.
+                            <!-- if spelling error ${word} should be ${suggestion1} here. -->
+                        </details>
+                    </button>
+    
+                    
+                    
+                </div>
+            
+            
+            
+            </div>
+        </div>
+
+    <!-- <script>
+        const textarea = document.querySelector("textarea");
+        textarea.addEventListener("keyup", e => {
+            textarea.style.height = "300px";
+            let scHeight = e.target.scrollHeight;
+            textarea.style.height = `${scHeight}px`;
+        });
+    </script> -->
+
+    <!-- Footer -->
+    <footer class="copyright">
+        <p>
+            &copy 2021 <a href="https://github.com/gionikva/writeit-web" target="_blank">WriteIt</a>
+        </p>
+    </footer>
+</body>
+
+</html>

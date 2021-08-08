@@ -128,7 +128,6 @@ body {
 
 .initial-view-bottom-center-container {
     width: 100%;
-    /* background-color: yellow; */
     min-height: 500px;
     display: flex;
     justify-content: center;
@@ -145,9 +144,8 @@ body {
     padding: 20px;
     text-align: center;
     margin: 50px;
-    /* background-color: blue; */
     position: absolute;
-    overflow-y: scroll;
+    overflow: none;
 }
 
 .initial-view-bottom-center h2 {
@@ -157,7 +155,6 @@ body {
 }
 
 .initial-view-bottom-center p {
-    
 }
 
 .buttons-container {
@@ -169,7 +166,6 @@ body {
     align-items: center;
     border-radius: 15px;
     outline: none;
-
 }
 
 .buttons-container button {
@@ -198,6 +194,15 @@ waht is it?
     :Sadge: mhm
 
 /* Media queries  */
+.button-container button details {
+    border: none;
+    outline: none;
+}
+
+.button-container button details:focus {
+    border: none;
+    outline: none;
+}
 
 @media only screen and (max-width: 780px) {
     .initial-view-right .phone {
@@ -282,3 +287,104 @@ waht is it?
     }
 }
 
+/* Highlight styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* .writeit-textarea-wrapper, .writeit-highlight-overlay, textarea {
+  width: 360px;
+  height: 180px;
+} */
+
+.writeit-highlights, textarea {
+  font: 20px/28px 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.writeit-textarea-wrapper {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  transform: translateZ(0);
+  -webkit-text-size-adjust: none;
+  overflow: auto;
+}
+
+.writeit-highlight-overlay {
+  position: absolute;
+  z-index: 1;
+  /* border: 2px solid #685972; */
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  bottom: 0px;
+  top: 0px;
+  overflow: none;
+  pointer-events: none;
+  transition: transform 1s;
+  padding: 10px;
+}
+
+/* .writeit-textarea-wrapper textarea:focus {
+  border: 2px solid var(--charcoal);
+} */
+
+.writeit-highlights {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+  color: red;
+  font-size: 1rem;
+  height: 100%;
+  overflow: auto;
+  pointer-events: none;
+}
+
+textarea {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  color: #444;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+  transition: transform 1s;
+  bottom: 0;
+  top: 0;
+  border: none;
+  outline: none;
+  padding: 10px !important;
+}
+
+textarea:active, textarea:focus {
+    border: none;
+    outline: none;
+}
+
+mark {
+  border-radius: 3px;
+  color: transparent;
+  background-color: #b1d5e5;
+  width: min-content;
+}
+
+textarea:focus, button:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 2px #c6aada; */
+}
+
+.wrapper {
+    height: 100px;
+    border-radius: 15px;
+
+}
+
+.highlight {
+    background-color: rgba(255, 255, 0, 0.3);
+}
