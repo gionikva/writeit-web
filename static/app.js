@@ -58,20 +58,25 @@ window.addEventListener("load", () => {
     var isWinPhone = ua.indexOf('windows phone') !== -1;
     var isIOS = !isWinPhone && !!ua.match(/ipad|iphone|ipod/);
     var suggestions = [];
-    interval = setInterval(() => pollHighlights(), 1000);
-
+    let active = false;
+    interval = setInterval(() => {if (!active) pollHighlights()}, 300);
+    let lastText = '';
     async function pollHighlights()  {
+        active = true;
         var text = $textarea.val();
-        if (text) {
+        if (text && lastText != text) {
             const resp = await fetch('/check/' + text);
             console.log("Resp", resp);
             const json = await resp.json();
             console.log("Json", json);
-            var highlightedText = applyHighlights(text,  Array.from(Object.values(json.corrected_words)));
+            suggestions = Array.from(Object.values(json.corrected_words));
+            var highlightedText = applyHighlights($textarea.val(), suggestions);
             $highlights.html(highlightedText);
         } else {
             var highlightedText = applyHighlights(text, []);
         }
+        lastText = $textarea.val();
+        active = false;
         // applyHighlights();
     }
 
@@ -82,9 +87,12 @@ window.addEventListener("load", () => {
         var offset = 0;
         for (const suggestion of suggestions) {
             var diff = '<div class="highlight"></div>'.length;
-            var bef = text.slice(0, suggestion.index[0] + offset);
-            var aft = text.slice(suggestion.index[1] + offset);
-            text = bef + `<div class="highlight">${suggestion.initial}</div>` + aft;
+            const left = suggestion.index[0] + offset;
+            const right = suggestion.index[1] + offset;
+            var bef = text.slice(0, left);
+            var mid = text.slice(left, right);
+            var aft = text.slice(right);
+            text = bef + `<div class="highlight">${mid}</div>` + aft;
             offset += diff;
         }
         
@@ -102,8 +110,8 @@ window.addEventListener("load", () => {
 
     function handleInput() {
         var text = $textarea.val();
-        // var highlightedText = applyHighlights(text);
-        // $highlights.html(highlightedText);
+        var highlightedText = applyHighlights(text, suggestions);
+        $highlights.html(highlightedText);
     }
 
     function handleScroll() {
