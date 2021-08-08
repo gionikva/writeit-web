@@ -10,7 +10,6 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 35vh;
 }
 
 ::selection{
@@ -47,6 +46,7 @@ textarea::placeholder{
 textarea:is(:focus, :valid){
   padding: 14px;
   border: 2px solid var(--charcoal);
+  border-radius: 5px;
 }
 
 textarea::-webkit-scrollbar{

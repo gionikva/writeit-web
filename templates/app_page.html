@@ -43,7 +43,8 @@
                 <!-- Text Area -->
                 <div class="textarea-container">
                     <div class="wrapper animate__animated animate__fadeInRightBig">
-                        <textarea spellcheck="true" placeholder="Type something here..." required></textarea>
+                        <!-- <div class="writeit-highlight-wrapper">  -->
+                        <textarea spellcheck="false" placeholder="Type something here..." required></textarea>
                     </div>
                     <div class="initial-view-center" id="polish-button">
                         <button class="animate__animated animate__fadeInRightBig">Polish!</button>
@@ -52,6 +53,49 @@
             </div>
         </div>
     </div>
+
+        <!-- suggestions section  -->
+        <div class="initial-view-bottom-center-container">
+            <div class="initial-view-bottom-center">
+                <h2>Suggestions</h2>
+
+                <div class="buttons-container">
+                    <!-- single button  -->
+                    <button>
+                        <!-- format: "${errorType}: ${incorrectWord}"" -->
+                        <h4>Spelling: intereting</h4>
+                        <!-- error description  -->
+                        <details>
+                            <summary>Details</summary>
+                            <p>intereting should be interesting here.</p>
+                        </details>
+                        <!-- suggestions  -->
+                        <details>
+                            <summary>Suggestions</summary>
+                            Word should be Word1 here.
+                            <!-- if spelling error ${word} should be ${suggestion1} here. -->
+                        </details>
+                    </button>
+    
+                    <button>
+                        <!-- for grammar mistakes make it scroll up and highlight the line with error  -->
+                        <h4>Grammar: Highlight error</h4>
+                        <!-- suggestions  -->
+                        <details>
+                            <summary>Suggestions</summary>
+                            Word should be Word1 here.
+                            <!-- if spelling error ${word} should be ${suggestion1} here. -->
+                        </details>
+                    </button>
+    
+                    
+                    
+                </div>
+            
+            
+            
+            </div>
+        </div>
 
     <!-- <script>
         const textarea = document.querySelector("textarea");

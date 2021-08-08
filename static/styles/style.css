@@ -113,10 +113,6 @@ body {
     border: 2px solid rgba(204, 201, 220, 0.6);
 }
 
-/* .initial-view-right {
-    height: 100%;
-} */
-
 .initial-view-right .phone {
     height: 730px;
     transform: scale(0.65);
@@ -124,6 +120,69 @@ body {
     background-position: center;
     background-size: cover;
     filter: drop-shadow(-3px -3px 12px rgba(255,255,255,0.3));
+}
+
+/* suggestions section under everything  */
+
+.initial-view-bottom-center-container {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 80px;
+    background-color: var(--richblack);
+}
+
+.initial-view-bottom-center {
+    height: 95%;
+    max-width: 768px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin: 50px;
+    position: absolute;
+    overflow-y: scroll;
+}
+
+.initial-view-bottom-center h2 {
+    font-weight: var(--h2);
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.initial-view-bottom-center p {
+
+}
+
+.buttons-container {
+    background-color: #fff;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    outline: none;
+}
+
+.buttons-container button {
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--lavendar);
+    border: 2px solid var(--richblack);
+    border-radius: 10px;
+}
+
+.button-container button details {
+    border: none;
+    outline: none;
+}
+
+.button-container button details:focus {
+    border: none;
+    outline: none;
 }
 
 @media only screen and (max-width: 780px) {
@@ -209,3 +268,88 @@ body {
     }
 }
 
+/* Highlight styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* .writeit-textarea-wrapper, .writeit-highlight-overlay, textarea {
+  width: 360px;
+  height: 180px;
+} */
+
+.writeit-highlights, textarea {
+  padding: 10px;
+  font: 20px/28px 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.writeit-textarea-wrapper {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  transform: translateZ(0);
+  -webkit-text-size-adjust: none;
+}
+
+.writeit-highlight-overlay {
+  position: absolute;
+  z-index: 1;
+  border: 2px solid #685972;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  bottom: 0px;
+  top: 0px;
+  overflow: auto;
+  pointer-events: none;
+  transition: transform 1s;
+}
+
+.writeit-highlights {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+}
+
+textarea {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  color: #444;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+  transition: transform 1s;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+textarea:active, textarea:focus {
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+mark {
+  border-radius: 3px;
+  color: transparent;
+  background-color: #b1d5e5;
+}
+
+textarea:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #c6aada;
+}
+
+.wrapper {
+    height: 100px;
+    border-radius: 15px;
+
+}
