@@ -143,7 +143,7 @@ body {
     text-align: center;
     margin: 50px;
     position: absolute;
-    overflow-y: scroll;
+    overflow: none;
 }
 
 .initial-view-bottom-center h2 {
@@ -281,7 +281,6 @@ body {
 } */
 
 .writeit-highlights, textarea {
-  padding: 10px;
   font: 20px/28px 'Open Sans', sans-serif;
   letter-spacing: 1px;
 }
@@ -293,27 +292,38 @@ body {
   margin: 0 auto;
   transform: translateZ(0);
   -webkit-text-size-adjust: none;
+  overflow: auto;
 }
 
 .writeit-highlight-overlay {
   position: absolute;
   z-index: 1;
-  border: 2px solid #685972;
+  /* border: 2px solid #685972; */
   background-color: #fff;
   border-radius: 5px;
   outline: none;
   width: 100%;
   bottom: 0px;
   top: 0px;
-  overflow: auto;
+  overflow: none;
   pointer-events: none;
   transition: transform 1s;
+  padding: 10px;
 }
+
+/* .writeit-textarea-wrapper textarea:focus {
+  border: 2px solid var(--charcoal);
+} */
 
 .writeit-highlights {
   white-space: pre-wrap;
   word-wrap: break-word;
   color: transparent;
+  color: red;
+  font-size: 1rem;
+  height: 100%;
+  overflow: auto;
+  pointer-events: none;
 }
 
 textarea {
@@ -326,30 +336,36 @@ textarea {
   overflow: auto;
   resize: none;
   transition: transform 1s;
-  height: 100%;
+  bottom: 0;
+  top: 0;
   border: none;
   outline: none;
+  padding: 10px !important;
 }
 
 textarea:active, textarea:focus {
     border: none;
     outline: none;
-    padding: 10px;
 }
 
 mark {
   border-radius: 3px;
   color: transparent;
   background-color: #b1d5e5;
+  width: min-content;
 }
 
 textarea:focus, button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #c6aada;
+  /* box-shadow: 0 0 0 2px #c6aada; */
 }
 
 .wrapper {
     height: 100px;
     border-radius: 15px;
 
+}
+
+.highlight {
+    background-color: rgba(255, 255, 0, 0.3);
 }

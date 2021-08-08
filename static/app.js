@@ -57,7 +57,7 @@ window.addEventListener("load", () => {
     function applyHighlights(text) {
         text = text
             .replace(/\n$/g, '\n\n')
-            .replace(/[A-Z].*?\b/g, '<mark>$&</mark>');
+            .replace(/[A-Z].*?\b/g, '<span class="highlight">$&</span>');
 
         if (isIE) {
             text = text.replace(/ /g, ' <wbr>');
@@ -73,6 +73,7 @@ window.addEventListener("load", () => {
     }
 
     function handleScroll() {
+        console.log)
         var scrollTop = $textarea.scrollTop();
         $backdrop.scrollTop(scrollTop);
 
@@ -93,10 +94,6 @@ window.addEventListener("load", () => {
             'input': handleInput,
             'scroll': handleScroll
         });
-
-        $toggle.on('click', function () {
-            $container.toggleClass('perspective');
-        });
     }
 
     if (isIOS) {
@@ -105,7 +102,4 @@ window.addEventListener("load", () => {
 
     bindEvents();
     handleInput();
-
-
-
 })

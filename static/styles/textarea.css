@@ -33,10 +33,9 @@ textarea {
   outline: none;
   padding: 15px;
   font-size: 16px;
-  max-height: 280px;
   border-radius: 5px;
   caret-color: var(--richblack);
-  border: 2px solid var(--lavendar);
+  /* border: 2px solid var(--lavendar); */
 }
 
 textarea::placeholder{
@@ -44,8 +43,6 @@ textarea::placeholder{
 }
 
 textarea:is(:focus, :valid){
-  padding: 14px;
-  border: 2px solid var(--charcoal);
   border-radius: 5px;
 }
 
