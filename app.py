@@ -12,6 +12,15 @@ def reduce_lengthening(text):
     pattern = re.compile(r"(.)\1{2,}")
     return pattern.sub(r"\1\1", text)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/app_page')
+def app_page():
+    return render_template('app_page.html')
+
+
 @app.route('/check/<string:name>')
 def check(name):
     print(name)
