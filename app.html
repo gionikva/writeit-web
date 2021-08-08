@@ -16,6 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
+<!-- Perfect Tense Script-->
+<script src="https://cdn.jsdelivr.net/npm/perfecttense-editor@latest/dist/pte.umd.js">
+</script>
+
+<script>
+  PerfectTenseEditor({ clientId: "610f731fb5f30038dcbed8b6" });
+</script>
+
 <body>
     <!-- Navigation  -->
     <div class="navbar">
@@ -34,8 +42,6 @@
                 <h1 class="heading animate__animated animate__fadeInLeftBig">Writing Tool, For All</h1>
                     <!-- slogan -->
                 <h3 class="animate__animated animate__fadeInLeftBig">Correct those mistakes and WriteIt with confidence using our AI writing assistant.</h3>
-                
-                
             </div>
             <!-- right side  -->
             <div class="initial-view-right initial-view-right-app-html">
@@ -49,6 +55,49 @@
                     </div>
                 </div>
             </div>
+            
+        </div>
+    </div>
+    <!-- suggestions section  -->
+    <div class="initial-view-bottom-center-container">
+        <div class="initial-view-bottom-center">
+            <h2>Suggestions</h2>
+
+            <div class="buttons-container">
+                <!-- single button  -->
+                <button>
+                    <!-- format: "${errorType}: ${incorrectWord}"" -->
+                    <h4>Spelling: intereting</h4>
+                    <!-- error description  -->
+                    <details>
+                        <summary>Details</summary>
+                        <p>intereting should be interesting here.</p>
+                    </details>
+                    <!-- suggestions  -->
+                    <details>
+                        <summary>Suggestions</summary>
+                        Word should be Word1 here.
+                        <!-- if spelling error ${word} should be ${suggestion1} here. -->
+                    </details>
+                </button>
+
+                <button>
+                    <!-- for grammar mistakes make it scroll up and highlight the line with error  -->
+                    <h4>Grammar: Highlight error</h4>
+                    <!-- suggestions  -->
+                    <details>
+                        <summary>Suggestions</summary>
+                        Word should be Word1 here.
+                        <!-- if spelling error ${word} should be ${suggestion1} here. -->
+                    </details>
+                </button>
+
+                
+                
+            </div>
+        
+        
+        
         </div>
     </div>
 
