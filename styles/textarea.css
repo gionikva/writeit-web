@@ -10,7 +10,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30vh;
+  min-height: 35vh;
 }
 
 ::selection{
@@ -20,6 +20,8 @@ textarea {
 
 .wrapper{
   width: 100%;
+  max-height: 330px;
+  min-height: 40vh;
   background: var(--lavendar);
   border-radius: 5px;
   padding: 25px 25px 30px;
@@ -32,6 +34,7 @@ textarea {
   outline: none;
   padding: 15px;
   font-size: 16px;
+  max-height: 300px;
   border-radius: 5px;
   caret-color: var(--richblack);
   border: 2px solid var(--lavendar);
