@@ -1,7 +1,7 @@
 document.getElementById('polish-button').addEventListener('mouseup', async () => {
     const textarea = document.getElementsByTagName('textarea').item(0);
-    const text = textarea.value;
-    const resp = await fetch({url: '/check/' + text});
+    var text = textarea.value;
+    const resp = await fetch('/check/' + text);
     console.log("Resp", resp);
     const json = await resp.json();
     console.log("Json", json);
